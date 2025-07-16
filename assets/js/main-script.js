@@ -26,7 +26,7 @@
 
   // mobile nav hide / show
   if ($(".mobile-menu").length) {
-    var mobileMenuContent = $("#top-navigation .navigation").html();
+    var mobileMenuContent = $("#top-nav .navigation").html();
 
     $(".mobile-menu .navigation").append(mobileMenuContent);
 
