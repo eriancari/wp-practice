@@ -650,11 +650,27 @@ input[type="text"] {
     margin-bottom: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .subscribe-bar p {
+    margin-bottom: 20px;
+  }
+}
+
 .subscribe-bar input,
 .subscribe-bar .btn {
     width: 100%;
     overflow: hidden;
     display: inline-block;
+}
+
+/* .subscribe-bar .container .row {
+  display: flex;
+  align-items: center;
+} */
+
+.flex-vertical-center {
+  display: flex;
+  align-items: center;
 }
 
 /* Content Section */
