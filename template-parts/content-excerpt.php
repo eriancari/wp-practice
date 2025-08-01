@@ -7,15 +7,14 @@
  */
 ?>
 
-<article class="post my-5">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="meta">
-        <span>June 12, 2025</span>
+        <span><?= get_the_date( 'M d, Y'); ?></span>
     </div>
-    <a href="#">
-        <h2>Blog post title</h2>
+    <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2>
     </a>
     <p class="excerpt">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula vel mauris sed venenatis. Donec odio lectus, viverra ac nulla sit amet, interdum scelerisque sapien. Nullam nisi est, mollis non hendrerit ut, egestas et felis. Nullam est eros, mattis aliquam elementum ac, sodales nec sapien. Nullam eget vulputate quam. Sed id eros lorem. Phasellus convallis laoreet rutrum. Ut rutrum velit in gravida dictum. In vel vulputate ipsum, sit amet porttitor nulla. Fusce sagittis laoreet ligula, accumsan pretium mauris dictum sit amet.
+        <?php force_balance_tags( the_excerpt() ); ?>
     </p>
-    <a href="#" class="read-more">Read the full post &rarr;</a>
+    <a href="<?php the_permalink(); ?>" class="read-more"><?php esc_html_e( 'Read the full post ->', 'bootstrap2wordpress'); ?></a>
 </article>

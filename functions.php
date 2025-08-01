@@ -62,3 +62,31 @@ function b2w_assets()
 }
 
 add_action( 'wp_enqueue_scripts', 'b2w_assets' );
+
+/* Custom readmore text */
+
+function b2w_excerpt_readmore($more)
+{
+    return '...';
+}
+
+add_filter('excerpt_more', 'b2w_excerpt_readmore');
+
+/* Custom pagination */
+
+function b2w_pagination()
+{
+
+    global $wp_query;
+    $links = paginate_links(
+        array(
+            'current'   => max(1, get_query_var('paged')),
+            'total'     => $wp_query->max_num_pages,
+            'type'      => 'list',
+            'prev_text' => '<-',
+            'next_text' =>  '->'
+        )
+    );
+    $links = '<nav class="b2w-pagination">' . $links . '</nav>';
+    echo wp_kses_post($links);
+}
