@@ -82,12 +82,16 @@ h4 {
     font-weight: 700;
 }
 
-.testimonial {
+.testimonial, blockquote.wp-block-quote {
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-style: italic;
   text-align: center;
   line-height: 1.5;
+}
+
+.testimonial p, blockquote.wp-block-quote p {
+  color: rgba(0,0,0,0.6);
 }
 
 .testimonial cite {
@@ -691,7 +695,7 @@ input[type="text"] {
 /* Content Section */
 
 .content-area {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 /* Post List */
@@ -942,4 +946,8 @@ article.post {
 
 .section-call-to-action .sub-title {
   color: var(--color-yellow);
+}
+
+.wp-post-image {
+    margin-bottom: 2rem;
 }
