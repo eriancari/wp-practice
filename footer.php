@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="copyright text-center">
-        <p>&copy; Copyright Akiteii Studios</p>
+        <p><?php echo wp_kses_post( get_theme_mod( 'footer_copyright', 'Copyright Brightside Studio' ) ); ?></p>
     </div>
 </footer>
 
