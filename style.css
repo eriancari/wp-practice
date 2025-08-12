@@ -161,6 +161,7 @@ input[type="text"] {
 #top-nav {
     position: absolute;
     width: 100%;
+    z-index: 99;
 }
 
 .main-menu .navigation {
@@ -430,7 +431,7 @@ input[type="text"] {
 .navbar-open {
     position: relative;
     display: none;
-    background-color: unset;
+    background-color: unset !important;
     padding: 0;
     border: none;
     position: absolute;
