@@ -1,3 +1,18 @@
+@charset "UTF-8";
+/*
+Theme Name: Bootstrap To WordPress
+Theme URI: https://bootstraptowordpress.com
+Author: Erika Carriedo
+Author URI: https://www.erikacarriedo.com
+Description: Bootstrap to WordPress Course Theme
+Requires at least: 4.9.6
+Requires PHP: 5.2.4
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bootstrap2wordpress
+*/
+
 /* VARIABLES */
 :root {
     --font-sans: "Inter", Helvetica, sans-serif;
@@ -26,6 +41,10 @@ p {
     font-weight: 400;
 }
 
+.elementor-widget-text-editor p {
+    color: inherit;
+}
+
 em {
     color: #828282;
 }
@@ -47,32 +66,51 @@ h3 {
 
 h1 {
     color: var(--color-light);
-    font-size: 3.5rem;
+    font-size: cal(var(--font-size) * 3.2);
 }
 
 h2 {
     color: var(--color-dark);
-    font-size: 2.5rem;
+    font-size: cal(var(--font-size) * 2.8);
     margin-bottom: 1rem;
     transition: var(--transition-dur);
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: cal(var(--font-size) * 2);
     font-weight: 700;
 }
 
 h4 {
-    font-size: 1.2rem;
+    font-size: cal(var(--font-size) * 1.2);
     font-weight: 700;
 }
 
-.testimonial {
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: cal(var(--font-size) * 2.6);
+    }
+    h2 {
+        font-size: cal(var(--font-size) * 1.8);
+    }
+    h3 {
+        font-size: cal(var(--font-size) * 1.6);
+    }
+    h4 {
+        font-size: cal(var(--font-size) * 1.2);
+    }
+}
+
+.testimonial, blockquote.wp-block-quote {
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-style: italic;
   text-align: center;
   line-height: 1.5;
+}
+
+.testimonial p, blockquote.wp-block-quote p {
+  color: rgba(0,0,0,0.6);
 }
 
 .testimonial cite {
@@ -142,6 +180,7 @@ input[type="text"] {
 #top-nav {
     position: absolute;
     width: 100%;
+    z-index: 99;
 }
 
 .main-menu .navigation {
@@ -411,7 +450,7 @@ input[type="text"] {
 .navbar-open {
     position: relative;
     display: none;
-    background-color: unset;
+    background-color: unset !important;
     padding: 0;
     border: none;
     position: absolute;
@@ -676,7 +715,7 @@ input[type="text"] {
 /* Content Section */
 
 .content-area {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 /* Post List */
@@ -721,6 +760,38 @@ article.post {
 .blog .post a.read-more:hover {
     color: var(--color-green);
     padding-left: 5px;
+}
+
+.b2w-pagination {
+    position: relative;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.b2w-pagination li {
+    position: relative;
+    margin-left: 6px;
+    display: inline-block;
+}
+
+.b2w-pagination li .page-numbers {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    color: #161616;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all var(--transition-dur) ease;
+}
+
+.b2w-pagination li .page-numbers.current,
+.b2w-pagination li:hover a {
+  color: #fff;
+  background-color: #F50057;
 }
 
 /* Footer Section */
@@ -842,6 +913,15 @@ article.post {
   margin: 20px 0;
 }
 
+@media screen and (max-width: 768px) {
+    .section-call-to-action {
+        padding: 40px 40px;
+    }
+    .section-call-to-action h2 {
+        font-size: 2rem;
+    }
+}
+
 .section-call-to-action .underlay-bg {
   position: absolute;
   top: 0;
@@ -895,4 +975,8 @@ article.post {
 
 .section-call-to-action .sub-title {
   color: var(--color-yellow);
+}
+
+.wp-post-image {
+    margin-bottom: 2rem;
 }
